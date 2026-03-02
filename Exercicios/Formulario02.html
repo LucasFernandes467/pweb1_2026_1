@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestão Acadêmica</title>
+</head>
+<body>
+
+    <form action="/action_page.html">
+        <fieldset>
+            <legend><strong>Sistema de Gestão Acadêmica</strong></legend>
+
+              <header>
+                <strong>Manutenção de Usuário do Sistema Interno</strong><br>
+    </header>
+
+            <p>
+                Login:<br>
+                <input type="text" name="pnome">
+            </p>
+
+            <p>
+                Senha:<br>
+                <input type="text" name="snome">
+            </p>
+
+               <p>
+                <strong>Status:</strong><br>
+                <select name="status">
+                    <option value="Inativo">Inativo</option>
+                    <option value="Ativo">Ativo</option>
+                </select>
+            </p>
+
+            <p>
+                <strong>Tipo:</strong><br>
+                <input type="radio" id="tecnico" name="tipo" value="tecnico">
+                <label for="tecnico">Técnico</label>
+                
+                <input type="radio" id="graduacao" name="tipo" value="professor">
+                <label for="professor">professor</label>
+                
+                <input type="radio" id="profissional" name="tipo" value="Aluno">
+                <label for="Aluno">Aluno</label>
+            </p>
+
+            <p>
+                <label for="data_criacao"><strong>Data Criação:</strong><br></label>
+                <input type="date" id="data_criacao" name="data_criacao">
+            </p>
+
+              <p>
+                <strong>Perfil:</strong><br>
+                <input type="radio" id="tecnico" name="perfil" value="Convidado">
+                <label for="Convidado">Convidado</label>
+                
+                <input type="radio" id="graduacao" name="perfil" value="Administrador">
+                <label for="Administrador">Administrador</label>
+
+            </p>
+
+            <p>
+                <strong>Observações:</strong><br>
+                <textarea id="exemplo01" name="Observações" rows="4" cols="50">
+                </textarea>
+            </p>
+
+            
+            <p>
+                <strong>Módulos:</strong><br>
+                <input type="checkbox" id="php" name="pref" value="php">
+                <label for="php">Compras</label>
+                
+                <input type="checkbox" id="java" name="pref" value="java">
+                <label for="java">Biblioteca</label>
+                
+                <input type="checkbox" id="python" name="pref" value="python">
+                <label for="python">Acadêmico</label><br>
+
+                <input type="checkbox" id="python" name="pref" value="python">
+                <label for="python">Documentação</label>
+
+                 <input type="checkbox" id="python" name="pref" value="python">
+                <label for="python">Recursos Humanos</label>
+            </p>
+
+            <input type="submit" value="Salvar">
+            <input type="button" value="Excluir">
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
