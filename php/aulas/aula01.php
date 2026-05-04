@@ -45,14 +45,25 @@
         }
 
         echo "<br>";
-        $carro = ['modelo' => "Mustang", 'cor' => "Branco", "Ano" => 2026];
+        $carros = [ 
+            ['modelo' => "Mustang", 'cor' => "Branco", "ano" => 2026],
+            ['modelo' => "Fusca", 'cor' => "Azul", "ano" => 1973],
+            ['modelo' => "Brasília", 'cor' => "Amarela", "ano" => 1969],
+        ];
+        
+        echo  $carros[0]['modelo']. " - ". $carros[0]['cor'];
+        echo "<br>";
 
-        echo  $carro['modelo']. " - ". $carro['cor'];
+        foreach ($carros as $indice => $carro) {
+            echo ($indice + 1) . " - ";
+            echo "Modelo: " . $carro['modelo'] . " - Ano: " . $carro['ano'];
 
+            echo "<br>";
+        }
 
     ?>
 
-    <p> Meu Site  <?= $carro['modelo']. " - ". $carro['Ano'];  ?></p>
+    <p> Meu Site  <?= $carro['modelo']. " - ". $carro['ano'];  ?></p>
 
     <?php
     include "./aula02.php";
