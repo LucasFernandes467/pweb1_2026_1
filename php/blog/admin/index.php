@@ -3,7 +3,7 @@
 include_once './database/db.class.php';
 
 //instanciar um objeto da classe DB 
-$conn = new db("aluno");
+$conn = new db("usuario");
 
 $dados = [
     'nome' => "Lucas Fernandes 2",
