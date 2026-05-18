@@ -1,6 +1,8 @@
 <?php
 
+
 class db {
+
 
     private $host     = 'localhost';
     private $user     = 'root';
@@ -10,11 +12,13 @@ class db {
     private $table_name;
     private $conn; // conexão fica guardada para reutilizar
 
+
     public function __construct($table_name)
     {
         $this->table_name = $table_name;
         $this->conn = $this->connect(); // cria a conexão uma única vez
     }
+
 
     // Método privado: apenas a própria classe pode chamar
     private function connect()
@@ -33,38 +37,49 @@ class db {
         }
     }
 
-    // INSERT INTO tabela ($campos) VALUES ($marcadores);
 
-    public function store($dados){
+
+
+    public function all(){
+        $sql = " SELECT * FROM $this->table_name";
+        $st = $this->conn->prepare($sql);
+        $st->execute();
+
+
+        return $st->fetchAll(PDO::FETCH_CLASS);
+    }
+   
+    //INSERT INTO tabela('campo1', 'campo2') VALUES(?,?);
+    public function store($dados)
+    {
+       
         $campos = "";
         $marcadores = "";
         $vetorData = [];
         $sep = "";
 
-        foreach ($dados as $campo => $valor){
+
+        foreach ($dados as $campo => $valor) {
             $campos .= $sep . $campo;
             $marcadores .= $sep . "?";
-            $vetorData[]= $valor;
+            $vetorData[] = $valor;
             $sep = ",";
+
+
+           
         }
+       
 
-        
 
-        $sql ="INSERT INTO $this->table_name ($campos) VALUES ($marcadores);";
+        $sql = "INSERT INTO $this->table_name($campos) VALUES($marcadores);";
+         try{
 
-        try{
 
         $st = $this->conn->prepare($sql);
-        $st->execute($vetorData);
-        }
-            catch(PDOException $e){
-                var_dump("Erro ao inserir", $e->getMessage());
-            }
-        }
-
+        $st -> execute($vetorData);
+        }catch(PDOException $e) {
+            throw new Exception("Erro ao inserir", $e->getMessage());
+       }
     }
-
-
-
-
+}
 
