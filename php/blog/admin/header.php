@@ -29,6 +29,21 @@ function actionMessage($success="",$error="")
         echo"<div class='alert alert-danger' role='alert'><strong>$error</strong></div>";
     }
 }
+function showValidationError($errors = []){
+    if(!empty($errors)){
+        echo "<div class = 'alert alert-danger' role='alert'><ul>";
+        echo "<strong>Erros nos campos: </strong>";
+        foreach ($errors as $error){
+            echo $error;
+        }
+        echo "</ul></div>";
+    }
+}
+
+function getFormValue($field)
+{
+    return isset($_POST['nome']) ? $_POST['nome'] : '';
+}
 ?>
 
 
