@@ -1,15 +1,17 @@
-    <?php
-    include './header.php';
-    ?>
+<?php
+include './header.php';
+?>
 
-    <div class="col">
-        <a href="./aulas/aula03_formulario.php" class="btn btn-primary">Formulário Aluno</a>
-    </div>
+<div class="col">
 
-    <?php
-    include './footer.php';
-    ?>
+    <a href="./aulas/aula03_formulario.php" class="btn btn-primary">Formulário Aluno</a>
 
+</div>
+
+
+<?php
+include './footer.php';
+?>
 
 
 
